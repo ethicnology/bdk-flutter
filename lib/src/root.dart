@@ -1183,7 +1183,7 @@ class Wallet extends BdkWallet {
 
   Future<void> sync({required Blockchain blockchain, hint}) async {
     try {
-      final res = await BdkWallet.sync(ptr: this, blockchain: blockchain);
+      final res = await BdkWallet.sync_(ptr: this, blockchain: blockchain);
       return res;
     } on BdkError catch (e) {
       throw mapBdkError(e);
